@@ -1,6 +1,8 @@
 
 # Sign Detection
 
+Visit the working prototype [here](https://signpredictor.azurewebsites.net/)
+
 ## Motivation
 To imitate a system that could in real-time convert sign language to voice. Such a system would be of immense use for the mute community when it comes to their interactions 
 in their daily life.
