@@ -1,5 +1,5 @@
 
-# Sign Detection
+# Sign Detection - The Sole Sign Language Translator For You
 
 Visit the working prototype [here](https://signpredictor.azurewebsites.net/)
 
