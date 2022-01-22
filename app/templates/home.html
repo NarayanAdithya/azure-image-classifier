@@ -9,16 +9,35 @@
 </head>
 <body class=" bg-no-repeat bg-fixed h-full bg-gradient-to-b from-violet-500 to-fuchsia-500">
         
-    <h1 class="sm:text-5xl text-4xl text-center my-5" >Sign Detection</h1>
-    <form method="POST"  enctype="multipart/form-data" >
-        <div class=" flex flex-col justify-center items-center sm:my-48">
-            <h1 class=" flex-1 align-center text-lg text-center">Put in the Picture and We Will Figure out The Number/Alphabet:</h1>
-            <input type="file" class="text-sm m-3 p-3 text-slate-900 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
-            file:text-sm file:font-semibold file:bg-emerald-500 file:text-violet-200 hover:file:bg-emerald-900" id="img" name="Image" accept="image/*">
-            <button type="Submit" class="flex-1 my-10 bg-orange-400 rounded p-3 hover:bg-orange-800 hover:border-orange-500 border-2"> Upload Photo </button>
-        </div>
-    </form>
+    <h1 class="sm:text-5xl text-4xl text-center underline decoration-wavy my-5" >Sign Detection</h1>
     
+    <div class="p-10 justify-items-start bg-opacity-50 bg-slate-500 rounded mx-10 my-10 sm:mx-40">
+        <form method="POST"  enctype="multipart/form-data" >
+            <div class=" flex flex-col justify-center items-center ">
+                <h1 class=" flex-1 align-center text-lg text-center">Put in the Picture and We Will Figure out The Number/Alphabet:</h1>
+                
+                <a class=' my-5 pt-2 text-emerald-900 underline hover:text-teal-400' href="{{url_for('learn')}}">Don't have any idea about Sign Language? Click Here, We'll Help You Out!</a>
+                
+                <input type="file" class="text-sm m-3 p-3 text-slate-900 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
+                file:text-sm file:font-semibold file:bg-emerald-500 file:text-violet-200 hover:file:bg-emerald-900" id="img" name="Image" accept="image/*">
+                <button type="Submit" class="flex-1 mt-5 mb-10 bg-orange-400 rounded p-3 hover:bg-orange-800 hover:border-orange-500 border-2"> Get Results </button>
+            </div>
+        </form>
+    </div>
+    
+    {% if tag and perc %}
+    <div class="text-center flex flex-col p-4 m-10 justify-items-start bg-opacity-20 bg-slate-500 border-white border-4 rounded mx-10 my-10 sm:mx-40">
+        <p class="flex-1" >For the Given Image the Alphabetical Representation is:</p>
+        <h1 class="flex-grow" > <span class="text-5xl text-teal-900">{{tag}}</span> </h1>
+        <h1>a probability of </h1>
+        <h1><span class="text-3xl text-lime-900">{{perc}}</span></h1>
+    </div>
+    {% endif %}
+    <div class=" mx-5 sm:mx-10 p-10 flex gap-2 sm:flex-row text-center flex-col">
+        <a class="flex-1 p-2 shrink mx-12 border-4 hover:text-emerald-900 hover:bg-emerald-300  border-emerald-300  bg-emerald-900 text-white text-2xl shadow-emerald-400 rounded-full drop-shadow-2xl " href="https://github.com/NarayanAdithya/azure-image-classifier">GitHub!</a>
+        <a class="flex-1 p-2 shrink mx-12 border-4 border-blue-900 bg-blue-400 hover:text-blue-400 hover:bg-blue-900 text-white text-2xl rounded-full" href="https://www.linkedin.com/in/adithya-narayan-3747081a3/">LinkedIn</a>
+        <a class="flex-1 p-2 shrink mx-12 border-4 bg-orange-400 border-orange-700 hover:text-orange-400 hover:bg-orange-700 text-white text-2xl rounded-full " href="mailto:adithyanarayan1234@gmail.com">Gmail</a>
+    </div>
     
 </body>
 </html>
